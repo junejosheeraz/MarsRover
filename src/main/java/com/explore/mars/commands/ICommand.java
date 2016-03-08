@@ -1,8 +1,7 @@
 package com.explore.mars.commands;
 
-import java.util.concurrent.ExecutionException;
-
 import com.explore.mars.data.Grid;
+import com.explore.mars.exception.ExecutionException;
 import com.explore.mars.rover.IRobot;
 
 public interface ICommand {

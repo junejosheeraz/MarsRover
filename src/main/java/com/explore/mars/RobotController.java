@@ -1,13 +1,13 @@
 package com.explore.mars;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.explore.mars.commands.ICommand;
 import com.explore.mars.data.Grid;
 import com.explore.mars.data.Result;
+import com.explore.mars.exception.ExecutionException;
 import com.explore.mars.rover.IRobot;
 
 /**
@@ -41,24 +41,22 @@ public class RobotController {
 	public Result execute(List<ICommand> commands) {
 		
 		Result result = Result.SUCCESS;
-		for (ICommand command : commands) {
-			try {
-				if (command.simulate(grid, robot)) {
-					command.execute(grid, robot);
-				} else {
-					// Which means we can not perform this operation at this time, so break and leave
+		if (commands != null) {
+			for (ICommand command : commands) {
+				try {
+					if (command.simulate(grid, robot)) {
+						command.execute(grid, robot);
+					} else {
+						// Which means we can not perform this operation at this time, so break and leave
+						result = Result.FAILURE;
+						break;
+					}
+				} catch (ExecutionException ee) {
+					logger.log(Level.SEVERE, "Failed to execute command", ee);
 					result = Result.FAILURE;
 					break;
 				}
-			} catch (ExecutionException ee) {
-				logger.log(Level.SEVERE, "Failed to execute command", ee);
-				result = Result.FAILURE;
-				break;
 			}
-		}
-		// Check if we failed, then return robot to its original place
-		if (Result.FAILURE.equals(result)) {
-			
 		}
 		return result;
 	}
