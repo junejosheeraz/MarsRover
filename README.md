@@ -13,7 +13,7 @@ then list of these commands will be executed on a robot.
 JDK Version Notes
 -----------------
 
-The MarsRover is built and supported with JDK 1.7 or higher and tested with the same version.
+The MarsRover is built and supported with JDK 11 or higher and tested with the same version.
 
 
 Requirements
