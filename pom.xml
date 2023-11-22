@@ -11,10 +11,9 @@
 		<junit.version>4.8.2</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<javadoc.aggregate>true</javadoc.aggregate>
-		<jdk.level>1.7</jdk.level>
-		<javac.source>1.7</javac.source>
-		<javac.target>1.7</javac.target>
-		
+		<jdk.level>11</jdk.level>
+		<javac.source>11</javac.source>
+		<javac.target>11</javac.target>
 	</properties>
 
 	<build>

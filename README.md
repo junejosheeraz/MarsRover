@@ -31,7 +31,7 @@ Build
 		
 		1. 	Unzip the MarsRover.zip archive
 		
-		2. 	Set the JAVA_HOME to the JDK 1.7:
+		2. 	Set the JAVA_HOME to the JDK 11:
 				
 				export JAVA_HOME=<JDK_Install_Dir>
 		
@@ -54,7 +54,7 @@ Build
 		
 		1. 	Unzip the MarsRover.zip archive
 		
-		2. 	Set the JAVA_HOME to the JDK 1.6:
+		2. 	Set the JAVA_HOME to the JDK 11:
 				
 				export JAVA_HOME=<JDK_Install_Dir>
 		
